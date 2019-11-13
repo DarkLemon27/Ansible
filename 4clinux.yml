@@ -16,7 +16,7 @@
                 var: process.stdout_lines
 
         - name: suspicious outbound traffic
-          shell: ss -tlpa | grep -v "443" | grep -v 80
+          shell: ss -tlpa | grep -v ":443" | grep -v ":80"
           register: traffic
         - debug:
                 var: traffic.stdout_lines
