@@ -1,7 +1,7 @@
 - name: Querying basic host info
   hosts: linux
   tasks:
-	- name: get hostname
+  	- name: get hostname
 	  shell: hostname
 	  register: host
 	- debug:
