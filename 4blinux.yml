@@ -1,3 +1,5 @@
+---
+
 - name: software information
   hosts: linux
   tasks: 
