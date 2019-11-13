@@ -1,3 +1,5 @@
+---
+
 - name: Querying basic host info
   hosts: linux
   tasks:
