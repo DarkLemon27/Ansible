@@ -7,10 +7,10 @@
           shell: apt-mark showmanual | grep -v "lib"
           register: list
         - debug:
-          var: list.stdout_lines
+                var: list.stdout_lines
 
         - name: startup software
           shell: ls /etc/init.d
           register: startup
         - debug:
-          var: startup.stdout_lines
+                var: startup.stdout_lines
