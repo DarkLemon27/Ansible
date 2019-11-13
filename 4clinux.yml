@@ -7,16 +7,16 @@
 	  shell: last
 	  register: logins
 	- debug:
-		var: logins.stdout_lines
+	  var: logins.stdout_lines
 
 	- name: running processes
 	  shell: ps ax -o user,pid,fname=Name,uid,ppid,cmd=Command
 	  register: process
 	- debug:
-		var: process.stdout_lines
+	  var: process.stdout_lines
 
 	- name: suspicious outbound traffic
 	  shell: ss -tlpa | grep -v "443" | grep -v 80
 	  register: traffic
 	- debug:
-		var: traffic.stdout_lines
+	  var: traffic.stdout_lines
