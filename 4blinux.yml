@@ -3,14 +3,14 @@
 - name: software information
   hosts: linux
   tasks: 
-  	- name: get installed software
-	  shell: apt-mark showmanual | grep -v "lib"
-	  register: list
-	- debug:
-	  var: list.stdout_lines
-	
-	- name: startup software
-	  shell: ls /etc/init.d
-	  register: startup
-	- debug:
-	  var: startup.stdout_lines
+        - name: get installed software
+          shell: apt-mark showmanual | grep -v "lib"
+          register: list
+        - debug:
+          var: list.stdout_lines
+
+        - name: startup software
+          shell: ls /etc/init.d
+          register: startup
+        - debug:
+          var: startup.stdout_lines
