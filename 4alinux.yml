@@ -1,0 +1,32 @@
+- name: Querying basic host info
+  hosts: linux
+  tasks:
+	- name: get hostname
+	  shell: hostname
+	  register: host
+	- debug:
+		var: host.stdout_lines
+
+	- name: get domain information
+	  shell: domainname
+	  register: domain
+	- debug: 
+		var: domain.stdout_lines	
+	
+	- name: List OS information
+	  shell: lsb_release -a
+	  register: os	
+	- debug: 
+		var: os.stdout_lines
+
+	- name: List IP Address
+	  shell: hostname -I
+	  register: ip
+	- debug: 
+		var: ip.stdout_lines
+
+	- name: List Local Users
+	  shell: awk -F'[/:]' '{ print $1}' /etc/passwd
+	  register: users
+	- debug:
+		var: users.stdout_lines
